@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-import BASE as BASE
+import base as BASE
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
