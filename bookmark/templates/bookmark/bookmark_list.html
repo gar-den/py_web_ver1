@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Ranchers&display=swap" rel="stylesheet">
+    <title>Django Bookmark List</title>
+    <style>
+        #contents {
+            width: 500px;
+            text-align: center;
+        }
+        * {
+            font-family: 'Do Hyeon', sans-serif;
+        }
+
+        span {
+            font-size: 64px;
+            color: red;
+        }
+        ul {
+            width: 300px;
+            text-align: left;
+            display: inline-block;
+            list-style: none;
+        }
+        a {
+            color: #5D5D5D;
+            text-decoration: none;
+        }
+        li {
+            margin-bottom: 20px;
+        }
+        a:hover {
+            background-color: #FAED7D;
+            color: #4374D9;
+        }
+    </style>
+</head>
+<body>
+    <div id="contents">
+        <h1><span>최</span>고로 &ensp; <span>애</span>정하는 &ensp; <span>유</span>튜브</h1>
+
+        <ul>
+            {% for bookmark in object_list %}
+                <li> <a href = "{% url 'detail' bookmark.id %}" > {{ bookmark.title }} </a> </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+</body>

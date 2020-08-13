@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Ranchers&display=swap" rel="stylesheet">
+        <title>Django Bookmark List Detail</title>
+        <style>
+            #contents {
+                width: 1000px;
+                text-align: center;
+            }
+            * {
+                font-family: 'Do Hyeon', sans-serif;
+            }
+
+            span {
+                font-size: 64px;
+                color: red;
+            }
+            ul {
+                text-align: left;
+                display: inline-block;
+                list-style: none;
+            }
+            a {
+                color: #5D5D5D;
+                text-decoration: none;
+            }
+            li {
+                margin-bottom: 20px;
+                width: 900px;
+                margin:auto;
+            }
+            a:hover {
+                background-color: #FAED7D;
+                color: #4374D9;
+            }
+
+            iframe {
+                width: 900px;
+                height: 500px;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div id="content">
+            <h1> <span> {{ object.title }} </span> </h1>
+
+            <ul>
+                <li><a href= {{ object.url }} > {{ object.url }} </a></li>
+                <li>Create Date: {{ object.create_date }} </li>
+                <li>Modify Date: {{ object.modify_date }} </li>
+            </ul>
+
+            <br><br>
+
+            <iframe src = {{ object.url }}></iframe>
+        </div>
+    </body>
+</html>

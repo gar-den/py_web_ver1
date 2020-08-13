@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Pattaya&display=swap" rel="stylesheet">
+    <title>BLOG DETAIL PAGE</title>
+    <script>
+        (
+            function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = 'https://garden-lee.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            }
+        )
+        ();
+    </script>
+</head>
+<body>
+    <div id="content">
+        <h1 id="title">{{ object.title }}</h1>
+        <p><span class="des">Description: </span> {{ object.description }} </p>
+        <p><span class="des">Create Date: </span> {{ object.create_date }}</p>
+        <p><span class="des">Modify Date: </span> {{ object.modify_date }}</p>
+        <div id="imgdiv">
+            <img src="{{ object.image.url }}" alt="{{ object.title }}" width="600" height="auto">
+        </div>
+
+        <div id="disqus_thread"></div>
+    </div>
+</body>
+</html>
+
