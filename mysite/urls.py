@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from mysite.views import IndexView
+from mysite.views import IndexView, DjangoView
 from bookmark.views import BookmarkLV, BookmarkDV
 from youtube.views import YoutubeLV
 from blog.views import PostLV, PostDV
@@ -26,6 +26,7 @@ from django.conf import settings
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', IndexView.as_view(), name='index'),
+    url(r'^django/$', DjangoView.as_view(), name='django_des'),
     url(r'^bookmark/$', BookmarkLV.as_view(), name='bookmark_index'),
     url(r'^bookmark/(?P<pk>\d+)/$', BookmarkDV.as_view(), name='detail'),
     url(r'^blog/$', PostLV.as_view(), name='blog_index'),
