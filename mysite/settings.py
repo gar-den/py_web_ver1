@@ -131,4 +131,6 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'  # 이미지 저장해둘 폴더
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+LOGIN_REDIRECT_URL = '/'
+
 # STATICFILES_DIR = [os.path.join(BASE_DIR, 'static')]

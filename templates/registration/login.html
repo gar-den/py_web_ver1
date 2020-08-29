@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LOG IN</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Gothic A1', sans-serif;
+
+        }
+        body {
+            width: 100%;
+
+            background-color: #D9E5FF;
+        }
+        #content {
+            width: 500px;
+            padding: 10px;
+            margin-left: auto;
+            margin-right: auto;
+
+            border: 3px solid #4374D9;
+
+            background-color: white;
+            box-shadow: 5px 5px #BDBDBD;
+        }
+        #title {
+            font-size: 64px;
+            text-align: center;
+
+            margin-top: 100px;
+            margin-bottom: 50px;
+
+            font-weight: bold;
+            color: #003399;
+        }
+        #user {
+            width: 100px;
+
+            margin: 50px auto;
+        }
+        #user img {
+            width: 100%;
+        }
+        .label {
+            display: inline-block;
+            width: 200px;
+            margin: 10px;
+            font-weight: bold;
+        }
+        .input {
+            display: inline-block;
+            width: 200px;
+            margin: 10px;
+        }
+        #buttondiv {
+            text-align: center;
+        }
+        #button {
+            width: 400px;
+            height: 40px;
+
+            background-color: #4374D9;
+            color: white;
+
+            margin-top: 20px;
+        }
+        #button:hover {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <form method="POST" action="."> {% csrf_token %}
+        <h1 id="title">LOG IN</h1>
+        <div id="content">
+            <div id="user">
+                <img src="https://drive.google.com/uc?id=1zJixSsgPwSEB3l-1UajZTL6s6nn-QWRJ" alt="user">
+            </div>
+            <div id="username">
+                <div class="label">
+                    {{ form.username.label_tag }}
+                </div>
+                <div class="input">
+                    {{ form.username }}
+                </div>
+            </div>
+
+            <div id="pw">
+                <div class="label">
+                    {{ form.password.label_tag }}
+                </div>
+                <div class="input">
+                    {{ form.password }}
+                </div>
+            </div>
+
+            <div id="buttondiv">
+                <button type="submit" id="button"> LOG IN </button>
+                <input type="hidden" value="{{ next }}">
+            </div>
+
+        </div>
+    </form>
+</body>
+</html>
+
