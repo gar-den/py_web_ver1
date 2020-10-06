@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bookmark Add/Update</title>
+</head>
+<body>
+<form action="" method="post"> {% csrf_token %}
+    <div>
+        {{ form.title.label_tag }} {{ form.title }}
+    </div>
+    <div>
+        {{ form.url.label_tag }} {{ form.url }}
+    </div>
+    <button type="submit"> CREATE/UPDATE </button>
+</form>
+</body>
+</html>

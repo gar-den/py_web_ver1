@@ -47,6 +47,14 @@
         <div id="content">
             <h1> <span> {{ object.title }} </span> </h1>
 
+            <a href="{% url 'bookmark_update' bookmark.id %}">
+                <button> UPDATE </button>
+            </a>
+
+            <a href="{% url 'bookmark_delete' bookmark.id %}">
+                <button> DELETE </button>
+            </a>
+
             <ul>
                 <li><a href= {{ object.url }} > {{ object.url }} </a></li>
                 <li>Create Date: {{ object.create_date }} </li>

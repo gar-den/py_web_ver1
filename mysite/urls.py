@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from mysite.views import IndexView, DjangoView, UserCreateView, UserCreateDoneTV
-from bookmark.views import BookmarkLV, BookmarkDV
+from bookmark.views import BookmarkLV, BookmarkDV, BookmarkCV, BookmarkUV, BookmarkRV
 from blog.views import PostLV, PostDV
 
 from django.conf.urls.static import static
@@ -28,12 +28,16 @@ urlpatterns = [
 
     url(r'^accounts/register/$', UserCreateView.as_view(), name='register'),
     url(r'^accounts/register_done/$', UserCreateDoneTV.as_view(), name='register_done'),
-
     url(r'^accounts/', include('django.contrib.auth.urls')),
 
     url(r'^django/$', DjangoView.as_view(), name='django_des'),
+
     url(r'^bookmark/$', BookmarkLV.as_view(), name='bookmark_index'),
     url(r'^bookmark/(?P<pk>\d+)/$', BookmarkDV.as_view(), name='detail'),
+    url(r'^bookmark/add/$', BookmarkCV.as_view(), name='bookmark_create'),
+    url(r'^bookmark/update/(?P<pk>[0-9]+)$', BookmarkUV.as_view(), name='bookmark_update'),
+    url(r'^bookmark/delete/(?P<pk>[0-9]+)$', BookmarkRV.as_view(), name='bookmark_delete'),
+
     url(r'^blog/$', PostLV.as_view(), name='blog_index'),
     url(r'^blog/(?P<pk>\d+)/$', PostDV.as_view(), name='blog_detail'),
 
